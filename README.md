@@ -1,9 +1,26 @@
-# PhysioNet-Challenge-CIC_UPIITA_TEAM
+# Homogeneous Multiprocessor Scheduling Benchmark
 
-This project implements a classifier for the annual George B. Moody PhysioNet Challenges, which aims to develop an automatic process for the identification of Chagas cases using electrocardiogram (ECG) signal data.
+Este repositorio aborda el Homogeneous Multiprocessor Scheduling Problem (HMSP), un problema NP-difícil que consiste en asignar un conjunto de tareas a múltiples procesadores idénticos, minimizando el makespan (tiempo total de ejecución).
 
-In this first installment, a proposal is presented that includes the preprocessing of ECG signals. Filters are applied to correct the out-of-phase signal and highlight important characteristics of the signals. Subsequently, a wavelet transform is used to obtain the approximation and details of the signals. These components are concatenated and used as input for a one-dimensional convolutional neural network (1D-CNN), designed to distinguish between people with and without Chagas.
+El proyecto implementa:
+- Generación de instancias aleatorias del problema, controlando:
+        - Número de tareas.
+        - Distribución del tiempo entre llegadas.
+        - Distribución de la duración de las tareas.
+        
+  Solución exacta mediante programación matemática mixta usando el solver Gurobi.
 
+Soluciones aproximadas mediante heurísticas voraces (greedy):
+
+Greedy no ordenado (online).
+
+Greedy ordenado (priorizando tareas largas).
+
+Análisis comparativo de desempeño en términos de:
+
+Calidad de la solución (gap respecto a referencia).
+
+Tiempo de ejecución.
 ## Project structure: 
 - CNN1D.py: Contains the implementation of the one-dimensional convolutional neural network.
 - data_loader.py: Loads and processes databases using biological signal processing techniques.
